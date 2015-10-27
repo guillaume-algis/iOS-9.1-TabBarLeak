@@ -10,6 +10,8 @@
 
 @interface FirstViewController ()
 
+- (IBAction)addSecondViewController:(id)sender;
+
 @end
 
 @implementation FirstViewController
@@ -22,6 +24,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)addSecondViewController:(id)sender
+{
+    UIViewController *secondViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SecondViewController"];
+    self.tabBarController.viewControllers = @[self, secondViewController];
 }
 
 @end
